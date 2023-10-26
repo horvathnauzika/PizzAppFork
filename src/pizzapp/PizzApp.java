@@ -22,9 +22,7 @@ public class PizzApp extends javax.swing.JFrame {
         
         db = 1;
         
-        vegsoAr = pizzaAlapAr * meret + extrak;
-        vegsoAr *= db; //vegsoAr = vegsoAr * db;
-        lblAr.setText(vegsoAr + "");
+        szamitaseskiiras();
     }
 
     @SuppressWarnings("unchecked")
@@ -273,7 +271,6 @@ public class PizzApp extends javax.swing.JFrame {
             pizzaAlapAr = 1900;
         }
                
-        meret = 1; //32 cm
         
         int extra1 = 0;
         int extra2 = 0;
@@ -282,9 +279,7 @@ public class PizzApp extends javax.swing.JFrame {
         
         db = 1;
         
-        vegsoAr = pizzaAlapAr * meret + extrak;
-        vegsoAr *= db; //vegsoAr = vegsoAr * db;
-        lblAr.setText(vegsoAr + "");       
+        szamitaseskiiras();       
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
     private void rdbMeret25StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdbMeret25StateChanged
@@ -294,17 +289,20 @@ public class PizzApp extends javax.swing.JFrame {
     private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
         meret = 0.75; //25 cm
         
+        szamitaseskiiras(); 
+    }//GEN-LAST:event_rdbMeret25ItemStateChanged
+
+    private void szamitaseskiiras() {
         vegsoAr = pizzaAlapAr * meret + extrak;
         vegsoAr *= db; //vegsoAr = vegsoAr * db;
-        lblAr.setText(vegsoAr + ""); 
-    }//GEN-LAST:event_rdbMeret25ItemStateChanged
+        lblAr.setText(vegsoAr + "");
+    }
 
     private void rdbMeret32ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret32ItemStateChanged
         meret = 1; //32 cm
         
-        vegsoAr = pizzaAlapAr * meret + extrak;
-        vegsoAr *= db; //vegsoAr = vegsoAr * db;
-        lblAr.setText(vegsoAr + "");
+        szamitaseskiiras();
+        //vegsoAr = vegsoAr * db;
     }//GEN-LAST:event_rdbMeret32ItemStateChanged
 
     public static void main(String args[]) {
