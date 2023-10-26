@@ -299,16 +299,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="sajt"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbSajtActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chbHagyma">
           <Properties>
             <Property name="text" type="java.lang.String" value="hagyma"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbHagymaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chbAnanasz">
           <Properties>
             <Property name="text" type="java.lang.String" value="anan&#xe1;sz"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbAnanaszActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

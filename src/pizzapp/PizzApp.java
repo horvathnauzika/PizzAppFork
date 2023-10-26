@@ -7,6 +7,9 @@ public class PizzApp extends javax.swing.JFrame {
         int db = 1;
         double vegsoAr;
         double meret;
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
 
     public PizzApp() {
         initComponents();
@@ -15,9 +18,9 @@ public class PizzApp extends javax.swing.JFrame {
                
         meret = 1; //32 cm
         
-        int extra1 = 0;
-        int extra2 = 0;
-        int extra3 = 0;
+        extra1 = 0;
+        extra2 = 0;
+        extra3 = 0;
         extrak = extra1 + extra2 + extra3;
         
         db = 1;
@@ -155,10 +158,25 @@ public class PizzApp extends javax.swing.JFrame {
         pnlExtrak.setBorder(javax.swing.BorderFactory.createTitledBorder("Extrák"));
 
         chbSajt.setText("sajt");
+        chbSajt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbSajtActionPerformed(evt);
+            }
+        });
 
         chbHagyma.setText("hagyma");
+        chbHagyma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbHagymaActionPerformed(evt);
+            }
+        });
 
         chbAnanasz.setText("ananász");
+        chbAnanasz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbAnanaszActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlExtrakLayout = new javax.swing.GroupLayout(pnlExtrak);
         pnlExtrak.setLayout(pnlExtrakLayout);
@@ -272,9 +290,9 @@ public class PizzApp extends javax.swing.JFrame {
         }
                
         
-        int extra1 = 0;
-        int extra2 = 0;
-        int extra3 = 0;
+        extra1 = 0;
+        extra2 = 0;
+        extra3 = 0;
         extrak = extra1 + extra2 + extra3;
         
         db = 1;
@@ -304,6 +322,52 @@ public class PizzApp extends javax.swing.JFrame {
         szamitaseskiiras();
         //vegsoAr = vegsoAr * db;
     }//GEN-LAST:event_rdbMeret32ItemStateChanged
+
+    private void chbSajtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbSajtActionPerformed
+        if(chbSajt.isSelected()){
+            extra1 = 150;
+            extrak = extra1+extra2+extra3;
+            
+            szamitaseskiiras();
+        }
+        
+        else if(chbSajt.isSelected() == false){
+        extra1 = 0;
+        extrak = extra1+extra2+extra3;
+        
+        szamitaseskiiras();
+        }
+    }//GEN-LAST:event_chbSajtActionPerformed
+
+    private void chbHagymaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbHagymaActionPerformed
+        if(chbHagyma. isSelected()){
+            extra2 = 150;
+            extrak = extra1+extra2+extra3;
+        
+            szamitaseskiiras();
+        }
+        
+        else if(chbHagyma.isSelected() == false){
+        extra2 = 0;
+        extrak = extra1+extra2+extra3;
+        
+        szamitaseskiiras();}
+    }//GEN-LAST:event_chbHagymaActionPerformed
+
+    private void chbAnanaszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAnanaszActionPerformed
+            if(chbAnanasz. isSelected()){
+            extra3 = 150;
+            extrak = extra1+extra2+extra3;
+        
+            szamitaseskiiras();
+        }
+        
+        else if(chbAnanasz.isSelected() == false){
+        extra3 = 0;
+        extrak = extra1+extra2+extra3;
+        
+        szamitaseskiiras();}
+    }//GEN-LAST:event_chbAnanaszActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
