@@ -1,5 +1,9 @@
 package pizzapp;
 
+import javax.swing.ButtonModel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+
 public class PizzApp extends javax.swing.JFrame {
 
     int pizzaAlapAr = -1;
@@ -81,11 +85,6 @@ public class PizzApp extends javax.swing.JFrame {
                 rdbMeret25ItemStateChanged(evt);
             }
         });
-        rdbMeret25.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                rdbMeret25StateChanged(evt);
-            }
-        });
 
         buttonGroup1.add(rdbMeret32);
         rdbMeret32.setSelected(true);
@@ -130,11 +129,6 @@ public class PizzApp extends javax.swing.JFrame {
         numDb.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 numDbStateChanged(evt);
-            }
-        });
-        numDb.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                numDbMouseClicked(evt);
             }
         });
 
@@ -219,6 +213,11 @@ public class PizzApp extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txaOsszesito);
 
         btnRendel.setText("Megrendelem");
+        btnRendel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRendelMouseClicked(evt);
+            }
+        });
 
         lblOsszesito.setText("Összestő:");
 
@@ -310,10 +309,6 @@ public class PizzApp extends javax.swing.JFrame {
         szamitaseskiiras();
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
-    private void rdbMeret25StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdbMeret25StateChanged
-
-    }//GEN-LAST:event_rdbMeret25StateChanged
-
     private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
         meret = 0.75; //25 cm
 
@@ -375,10 +370,6 @@ public class PizzApp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_chbAnanaszActionPerformed
 
-    private void numDbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_numDbMouseClicked
-
-    }//GEN-LAST:event_numDbMouseClicked
-
     private void numDbStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numDbStateChanged
                int darabszam = (int) numDb.getValue();
         if (darabszam == 1){
@@ -399,6 +390,14 @@ public class PizzApp extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_numDbStateChanged
+
+    private void btnRendelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRendelMouseClicked
+        Object pizzafajta = cmdValaszthatoPizzak.getSelectedItem();
+        Object valasztottdarab = numDb.getValue();
+        
+        
+        txaOsszesito.setText("A választott pizza: " + valasztottdarab + " " + "db" + " " + pizzafajta + "\nMérete: " + "\nFeltét(ek):");
+    }//GEN-LAST:event_btnRendelMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

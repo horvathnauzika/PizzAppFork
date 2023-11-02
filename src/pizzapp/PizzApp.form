@@ -167,7 +167,6 @@
           </Properties>
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rdbMeret25ItemStateChanged"/>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="rdbMeret25StateChanged"/>
           </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdbMeret32">
@@ -257,7 +256,6 @@
           </Properties>
           <Events>
             <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="numDbStateChanged"/>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="numDbMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
@@ -344,6 +342,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Megrendelem"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnRendelMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblOsszesito">
       <Properties>
