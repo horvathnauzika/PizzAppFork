@@ -1,6 +1,11 @@
 package pizzapp;
 
+import com.sun.java.accessibility.util.AWTEventMonitor;
+import java.awt.Checkbox;
+import java.lang.reflect.AccessibleObject;
+import javax.management.StringValueExp;
 import javax.swing.ButtonModel;
+import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
@@ -15,6 +20,9 @@ public class PizzApp extends javax.swing.JFrame {
     int extra2 = 0;
     int extra3 = 0;
     int darabara = 0;
+    private boolean sajtfeltet;
+    private boolean hagymafeltet;
+    private boolean ananaszfeltet;
 
     public PizzApp() {
         initComponents();
@@ -83,6 +91,11 @@ public class PizzApp extends javax.swing.JFrame {
         rdbMeret25.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 rdbMeret25ItemStateChanged(evt);
+            }
+        });
+        rdbMeret25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbMeret25ActionPerformed(evt);
             }
         });
 
@@ -394,10 +407,30 @@ public class PizzApp extends javax.swing.JFrame {
     private void btnRendelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRendelMouseClicked
         Object pizzafajta = cmdValaszthatoPizzak.getSelectedItem();
         Object valasztottdarab = numDb.getValue();
+        JRadioButton kispizza = rdbMeret25;
+        kispizza.setActionCommand("25 cm");
+        JRadioButton nagypizza = rdbMeret32;
+        nagypizza.setActionCommand("32 cm");
         
+        if (chbSajt.isSelected() == true);{
+        chbSajt.getText();}
         
-        txaOsszesito.setText("A választott pizza: " + valasztottdarab + " " + "db" + " " + pizzafajta + "\nMérete: " + "\nFeltét(ek):");
+        if (chbHagyma.isSelected() == true);{
+        chbHagyma.getText();}
+        
+        if (chbAnanasz.isSelected() == true);{
+        chbAnanasz.getText();}
+        
+
+
+                
+        
+        txaOsszesito.setText("A választott pizza: " + valasztottdarab + " " + "db" + " " + pizzafajta + "\nMérete: " + buttonGroup1.getSelection().getActionCommand() + "\nFeltét(ek): " + chbSajt.getText() + ", " + chbHagyma.getText() + ", " + chbAnanasz.getText());
     }//GEN-LAST:event_btnRendelMouseClicked
+
+    private void rdbMeret25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret25ActionPerformed
+        
+    }//GEN-LAST:event_rdbMeret25ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
