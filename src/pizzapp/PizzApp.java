@@ -418,7 +418,7 @@ public class PizzApp extends javax.swing.JFrame {
         if (chbHagyma.isSelected() == true);{
         chbHagyma.getText();}
         
-        if (chbAnanasz.isSelected() == true);{
+        if (true == chbAnanasz.isSelected());{
         chbAnanasz.getText();}
         
 
