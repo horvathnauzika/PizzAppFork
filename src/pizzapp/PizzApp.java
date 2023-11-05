@@ -412,20 +412,15 @@ public class PizzApp extends javax.swing.JFrame {
         JRadioButton nagypizza = rdbMeret32;
         nagypizza.setActionCommand("32 cm");
         
-        if (chbSajt.isSelected() == true);{
-        chbSajt.getText();}
-        
-        if (chbHagyma.isSelected() == true);{
-        chbHagyma.getText();}
-        
-        if (true == chbAnanasz.isSelected());{
-        chbAnanasz.getText();}
+        String sajtfeltet = chbSajt.isSelected() ? chbSajt.getText() : "";
+        String hagymafeltet = chbHagyma.isSelected() ? chbHagyma.getText() : "";
+        String ananaszfeltet = chbAnanasz.isSelected() ? chbAnanasz.getText() : "";
         
 
 
                 
         
-        txaOsszesito.setText("A választott pizza: " + valasztottdarab + " " + "db" + " " + pizzafajta + "\nMérete: " + buttonGroup1.getSelection().getActionCommand() + "\nFeltét(ek): " + chbSajt.getText() + ", " + chbHagyma.getText() + ", " + chbAnanasz.getText());
+        txaOsszesito.setText("A választott pizza: " + valasztottdarab + " " + "db" + " " + pizzafajta + "\nMérete: " + buttonGroup1.getSelection().getActionCommand() + "\nFeltét(ek): " + sajtfeltet + " " + "\n" + hagymafeltet + " " + "\n" + ananaszfeltet);
     }//GEN-LAST:event_btnRendelMouseClicked
 
     private void rdbMeret25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret25ActionPerformed
